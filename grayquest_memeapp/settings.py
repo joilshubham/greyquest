@@ -25,7 +25,7 @@ SECRET_KEY = '_c(v7h^ga)^&r6_9q-%#oh--=*zb%rcm-@vz!j-=7ck_-x!+0l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['grayquest-memeapp.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['grayquest-memeapp.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -120,3 +121,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,"staticfiles")
+
+STATICFILES_DIR = {
+    os.path.join(BASE_DIR,"static"),
+}
