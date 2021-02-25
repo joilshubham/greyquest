@@ -1,0 +1,1 @@
+web: gunicorn grayquest_memeapp.wsgi --log-file -
